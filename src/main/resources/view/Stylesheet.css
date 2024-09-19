@@ -1,0 +1,205 @@
+
+/***************************************************************************************
+ *    Title: CSS for Platforms and Projectile (For general idea, then the rest is referencing from the idea)
+ *    Author: ChatGPT
+ *    Date: May 9, 2017
+ *    Code version: Scala 2.12.19
+ *    Availability: -
+ *
+ ***************************************************************************************/
+
+/* For the platforms for a more pixelated look */
+.rectangle-platform {
+    -fx-fill: linear-gradient(to bottom, #8B4513, #A0522D); /* A brownish color to match the theme of the background */
+    -fx-stroke: #DAA520;
+    -fx-stroke-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 5, 0.7, 0.0, 1.0); /* Shadow effect */
+    -fx-opacity: 0.9;
+    -fx-background-radius: 0; /* Keep the pixelated look */
+}
+
+/* For the projectiles for a more pixelated look */
+.circle-projectile {
+    -fx-fill: linear-gradient(to bottom, #ff6347, #ff0000); /* Brighter red gradient */
+    -fx-stroke: #ff4500; /* A slightly darker red for the outline */
+    -fx-stroke-width: 2;
+    -fx-effect: innershadow(two-pass-box, rgba(0,0,0,0.6), 3, 0.5, 1.0, 1.0),
+    dropshadow(gaussian, rgba(0,0,0,0.6), 3, 0.5, 0.0, 0.0); /* Shadows for better visibility */
+    -fx-smooth: false;
+}
+
+/* For the Background images for the Home.fxml, Leaderboard.fxml, and GameOver.fxml*/
+.home-pane, .leaderboard-pane, .gameOver-pane, .howToPlay-pane{
+    -fx-background-image: url('/images/StartPage.GIF');
+    -fx-background-size: cover;
+}
+
+/* General Button Styling For All FXML which have buttons */
+.button {
+    -fx-background-color: #4a4a4a;
+    -fx-text-fill: #f0e6d2;
+    -fx-font-family: 'Arial Black';
+    -fx-font-size: 16px;
+    -fx-padding: 10px;
+    -fx-border-color: #8b4513;
+    -fx-border-width: 3px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 10, 0.5, 0.0, 0.0);
+    -fx-cursor: hand;
+}
+
+/* Button Hover Effect */
+.button:hover {
+    -fx-background-color: #7a7a7a;
+    -fx-border-color: #ff6347;
+    -fx-text-fill: #ffffff;
+}
+
+/* Button Styling for Start Button */
+.button-start {
+    -fx-background-color: linear-gradient(to bottom, #ff7f50, #ff4500);
+    -fx-border-color: #8b0000;
+    -fx-text-fill: #ffffff;
+}
+
+
+/* Button Styling for Exit Button */
+.button-exit {
+    -fx-background-color: linear-gradient(to bottom, #b22222, #8b0000);
+    -fx-border-color: #550000;
+    -fx-text-fill: #ff6347;
+}
+
+/* Button Pressed Effect (Short Effect for all Buttons) */
+.button:pressed {
+    -fx-background-color: #333333;
+    -fx-border-color: #8b4513;
+    -fx-effect: innershadow(two-pass-box, rgba(0,0,0,0.8), 5, 0.0, 0.0, 1.0);
+}
+
+/* Text Field Styling */
+.text-field {
+    -fx-background-color: #333333;
+    -fx-text-fill: #f0e6d2;
+    -fx-border-color: #8b4513;
+    -fx-border-width: 2px;
+    -fx-font-family: 'Arial Black';
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #b0b0b0;
+}
+
+
+/* For Leaderboard View */
+/* Table Styling */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-text-fill: #f0e6d2;
+    -fx-font-family: 'Arial Black';
+    -fx-font-size: 14px;
+    -fx-table-cell-border-color: transparent;
+    -fx-border-color: #8b4513;
+    -fx-border-width: 2px;
+}
+
+/* Table Column Headers */
+.table-view .column-header-background {
+    -fx-background-color: #4a4a4a;
+}
+
+/* Table Column (Centered) */
+.table-view .table-column {
+    -fx-alignment: CENTER;
+}
+
+/* Table Row Styling */
+.table-view .cell {
+    -fx-background-color: #2e2e2e;
+    -fx-border-color: #555555;
+    -fx-text-fill: #ffffff;
+}
+
+/* Table Selection */
+.table-row-cell:selected,
+.table-row-cell:focused:selected {
+    -fx-background-color: #ff6347;
+    -fx-text-fill: #000000;
+}
+
+/* General styling for the RootLayout */
+.root-layout {
+    -fx-background-color: linear-gradient(to bottom, #333333, #222222);
+}
+
+/* Styling for the MenuBar */
+.menu-bar {
+    -fx-background-color: linear-gradient(to bottom, #444444, #333333);
+    -fx-text-fill: white;
+    -fx-border-color: #555555;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 2, 2);
+}
+
+/* Styling for the Menu */
+.menu {
+    -fx-text-fill: white; /* Ensure text is always white */
+    -fx-font-family: 'Arial Black';
+    -fx-font-size: 14px;
+}
+
+/* Styling for the MenuItems */
+.menu-item {
+    -fx-text-fill: white;  /* Ensure the text is always white */
+    -fx-background-color: transparent; /* Default transparent background */
+    -fx-font-family: 'Arial Black';
+    -fx-font-size: 14px;
+}
+
+/* Hover Effect for MenuBar */
+.menu-item:hover {
+    -fx-background-color: #555555; /* Slight background change on hover */
+}
+
+/* Pressed Effect for MenuBar */
+.menu-item:focused {
+    -fx-background-color: #666666; /* Darker background when focused */
+}
+
+/* MenuBar shadow effect */
+.menu-bar:focused {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 15, 0.7, 0.0, 0.0);
+}
+
+/* Differentiating the menu background slightly */
+.menu-bar .menu-button {
+    -fx-background-color: #777777;
+    -fx-text-fill: white;
+}
+
+/* Differentiating over the hover menu */
+.menu-bar .menu-button:hover {
+    -fx-background-color: #555555;
+    -fx-text-fill: white;
+}
+
+/* Differentiating when the menu pressed */
+.menu-bar .menu-button:focused {
+    -fx-background-color: #666666;
+    -fx-text-fill: white;
+}
+
+/* style.css */
+
+.game-pane {
+    -fx-background-image: url('/images/Background.GIF');
+    -fx-background-size: cover;
+}
+
+.player-name-text, .score-text, .health-text {
+    -fx-font-size: 20px;
+    -fx-fill: white;
+    -fx-font-family: 'Arial Black';
+}
+
+.health-text {
+    -fx-fill: red;
+}
